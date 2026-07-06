@@ -107,14 +107,64 @@
   <section class="section section--cream">
     <div class="section-inner showcase">
       <h2 class="section-heading">From the Studio</h2>
-      <div class="showcase-grid">
-        <div class="showcase-item">
-          <img src="images/sample1.avif" alt="Handcrafted garment by Akabi Select Boutique">
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="images/customer_img.jpg" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide active">
+          <img src="images/customer_img2.jpg" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide">
+          <img src="images/customer_img3.webp" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide">
+          <img src="images/customer_img4.webp" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide">
+          <img src="images/customer_img5.webp" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide">
+          <img src="images/customer_img6.jpg" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide">
+          <img src="images/customer_img3.2.webp" alt="Customer photo of Akabi Select Boutique handmade costume" class="gallery-slide">
+        </div>
+        <div class="gallery-dots">
+          <button class="gallery-dot active" aria-label="Slide 1"></button>
+          <button class="gallery-dot" aria-label="Slide 2"></button>
+          <button class="gallery-dot" aria-label="Slide 3"></button>
+          <button class="gallery-dot" aria-label="Slide 4"></button>
+          <button class="gallery-dot" aria-label="Slide 5"></button>
+          <button class="gallery-dot" aria-label="Slide 6"></button>
+          <button class="gallery-dot" aria-label="Slide 7"></button>
         </div>
       </div>
-      <p class="section-body showcase-caption">
-        Every piece begins as an idea and becomes something you can feel.
-      </p>
+
+      <div class="reviews">
+        <h3 class="reviews-heading">What Our Customers Say</h3>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Arrived earlier than expected!!! It is perfect for my son's 2nd Toy Story birthday!"</p>
+            <div class="review-meta">
+              <span class="review-name">Briana</span>
+              <span class="review-product">Woody Inspired Costume</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"This is a stunning costume. Quality is perfection and it looks a lot like Rainbow's outfit without exactly copying it. It was perfect for my daughter's 6th birthday."</p>
+            <div class="review-meta">
+              <span class="review-name">Kira</span>
+              <span class="review-product">Rainbow Brite Inspired Costume</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Adorable and high quality. Our rainbow party is going to be a huge hit! Shipping was faster than expected. Thank you!"</p>
+            <div class="review-meta">
+              <span class="review-name">Amy</span>
+              <span class="review-product">Rainbow Brite Inspired Costume</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Super cute and great material!"</p>
+            <div class="review-meta">
+              <span class="review-name">Etsy Buyer</span>
+              <span class="review-product">Woody Inspired Costume</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -122,21 +172,13 @@
     <div class="section-inner section-center">
       <h2 class="section-heading section-heading--large">Shop the Collection</h2>
       <p class="section-body section-body--center">
-        Discover handcrafted pieces, vintage finds, and curated selections.
-        Each item is chosen or made with the same care and intention.
+        Discover handcrafted pieces, vintage finds, and curated selections from our
+        5-star Etsy shop — with over 2,000 five-star reviews and 8,000+ items sold.
       </p>
       <a href="https://www.etsy.com/shop/AkabiSelectboutique" target="_blank" rel="noopener" class="cta-button">
         Visit the Etsy Shop
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
-    </div>
-  </section>
-
-  <section class="section section--cream">
-    <div class="section-inner billboard">
-      <h2 class="billboard-text">
-        Fashion is not just about what you wear — it's about how it's made.
-      </h2>
     </div>
   </section>
 
@@ -173,6 +215,40 @@
   </footer>
 
   <script>
+    // Gallery auto-rotate
+    (function() {
+      const slides = document.querySelectorAll('.gallery-slide');
+      const dots = document.querySelectorAll('.gallery-dot');
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = index;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function next() {
+        goTo((current + 1) % slides.length);
+      }
+
+      function startTimer() {
+        timer = setInterval(next, 4000);
+      }
+
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() {
+          clearInterval(timer);
+          goTo(i);
+          startTimer();
+        });
+      });
+
+      startTimer();
+    })();
+
     const toggle = document.querySelector('.nav-toggle');
     const mobileNav = document.querySelector('.nav-mobile');
     toggle.addEventListener('click', () => {

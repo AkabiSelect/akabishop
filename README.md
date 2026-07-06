@@ -33,11 +33,10 @@ A handcrafted fashion brand website for [Akabi Select Boutique](https://www.etsy
 2. **Hero** — Full-viewport firebrick red with oversized pink "AKABI SELECT" and dark "BOUTIQUE" typography
 3. **The Story Behind Every Stitch** — Plum background, personal story about learning to sew from grandmother in Takeo, Japan, with sewing studio photo
 4. **The Birth of Akabi Select Boutique** — Tan background, Fukuoka fashion school photo + founding story (2012), thank-you message with crafting workspace photo
-5. **From the Studio** — Cream background, product showcase (handmade Jessie costume dress)
+5. **From the Studio** — Cream background, rotating image gallery (5 customer photos with crossfade transitions, dot navigation, 4s auto-rotate) + 4 Etsy customer reviews in 2x2 grid
 6. **Shop the Collection** — Orange background with CTA button linking to Etsy shop
-7. **Billboard Quote** — Cream background with plum text: "Fashion is not just about what you wear — it's about how it's made."
-8. **Let's Connect** — Peach background, contact links (email, Instagram, Etsy)
-9. **Footer** — Dark background with brand name and copyright
+7. **Let's Connect** — Peach background, contact links (email, Instagram, Etsy)
+8. **Footer** — Dark background with brand name and copyright
 
 ## Changelog
 
@@ -55,6 +54,10 @@ A handcrafted fashion brand website for [Akabi Select Boutique](https://www.etsy
 - Removed mix-blend-mode nav (caused cyan anti-pattern) in favor of dark translucent backdrop
 - Split "Birth" section thank-you paragraph into its own row with about2 workspace photo
 - Verified responsive layout at mobile (375px), tablet (768px), and desktop
+- Removed billboard quote section
+- Added rotating image gallery (5 customer photos, crossfade transitions, dot navigation, 4-second auto-rotate)
+- Added customer reviews section with 4 Etsy reviews in a 2×2 grid (single column on mobile)
+- Fixed image format mismatches: renamed AVIF and WebP files disguised as .jpg to correct extensions
 
 ## Project Structure
 
@@ -68,6 +71,11 @@ akabishop/
 │   ├── fukuoka.jpg     # Fukuoka Fashion School building
 │   ├── sample1.avif    # Product photo (Jessie costume dress)
 │   ├── about2.avif     # Crafting workspace with fabrics
+│   ├── customer_img.jpg   # Customer photo (JPEG)
+│   ├── customer_img2.jpg  # Customer photo (JPEG)
+│   ├── customer_img3.webp # Customer photo (WebP)
+│   ├── customer_img4.webp # Customer photo (WebP)
+│   ├── customer_img5.webp # Customer photo (WebP)
 │   └── ichigo.png      # Mascot illustration (unused)
 └── colors/
     └── Red-Color-Palettes-Sunset-Blaze.jpg  # Color reference
